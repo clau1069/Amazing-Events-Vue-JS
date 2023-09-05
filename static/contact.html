@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./recursos/favico.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- GOOGLE FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="">
+    <!-- NAV -->
+    <!-- AQUI SE CAMBIAN LOS COLORES DEL NAVBAR Y EL PADDING -->
+    <nav class="navbar navbar-expand-lg px-4 py-1">
+      <div class="container-fluid p-0 m-0 d-flex justify-content-between">
+        <!-- ESTE ES EL TOOGLER Y BRAND-->
+        <div
+          class="d-flex justify-content-between align-items-center container-fluid"
+        >
+          <!-- EL COLOR DEL BORDE ESTÁ MODIFICADO EN EL STYLE (navbar-toggler)-->
+          <button
+            class="navbar-toggler df-col-cc"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <img src="./recursos/menu.svg" alt="menu" />
+          </button>
+          <!-- ESTE ES EL BRAND -->
+          <a class="navbar-brand m-0 p-0 border-0" href="#">
+            <!-- AQUI SE COLOCA EL LOGO MEDIANTE CSS-->
+            <div class="brand-logo"></div>
+          </a>
+        </div>
+
+        <!-- ESTE ES EL NAV CON LOS A -->
+        <div
+          class="collapse navbar-collapse container-fluid"
+          id="navbarTogglerDemo03"
+        >
+          <!-- ESTOS SON LOS ANCHOR -->
+          <ul
+            class="ul-movil d-flex list-no fs-2vh m-0 p-0 justify-content-end wid-50vw"
+          >
+            <li class="nav-item">
+              <a
+                class="nav-link text-white"
+                aria-current="page"
+                href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link text-white" href="upcomingevents.html"
+                >Upcoming Events</a
+              >
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link text-white" href="pastevents.html"
+                >Past Events</a
+              >
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link text-white" href="#">Contact</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link text-white" href="stats.html">Stats</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- A CONTINUACION EL HEADER Y EL DIV (main y footer) -->
+    <div
+      class="header-main caja df-row-cc align-items-start container-fluid m-0 p-0"
+    >
+      <header class="d-flex flex-column container-fluid p-0 m-0">
+        <div class="d-flex justify-content-center align-items-center">
+          <a class="me-3" href="pastevents.html"
+            ><img src="./recursos/mayor-menor.png" alt=""
+          /></a>
+          <h1 class="m-0 text-white">CONTACT</h1>
+          <a class="ms-3" href="stats.html"
+            ><img src="./recursos/menor.png" alt=""
+          /></a>
+        </div>
+      </header>
+      <div class="d-flex flex-column container-fluid m-0 p-0">
+        <main class="container-fluid caja-3 wid100 p-0 m-0 df-col-cc">
+          <form
+            class="d-flex flex-column form-contact"
+            action="./show_data.html"
+            method="get"
+          >
+            <label class="d-flex flex-column text-white mb-4"
+              >Name
+              <input type="text" name="name" required />
+            </label>
+            <label class="d-flex flex-column text-white mb-4"
+              >Email
+              <input type="email" name="email" required />
+            </label>
+            <label class="d-flex flex-column text-white mb-4"
+              >Messagge
+              <input type="text" name="messagge" required />
+            </label>
+            <input
+              class="bg-gray text-fucsia submit"
+              type="submit"
+              value="Submit"
+            />
+          </form>
+        </main>
+      </div>
+    </div>
+    <footer
+      class="container-fluid p-0 m-0 wid100 d-flex px-5 bg-gray align-items-center mt-5"
+    >
+      <div class="mt-1 mb-1">
+        <img
+          class="me-3 ico-foot"
+          src="./recursos/icons8-instagram-50.png"
+          alt=""
+        />
+        <img
+          class="me-3 ico-foot"
+          src="./recursos/icons8-facebook-50.png"
+          alt=""
+        />
+        <img class="ico-foot" src="./recursos/icons8-whatsapp-50.png" alt="" />
+      </div>
+      <p class="mb-2 text-fucsia">Amazing Events</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

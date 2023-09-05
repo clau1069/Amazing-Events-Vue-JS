@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Past Events</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-media.css" />
+    <link
+      rel="shortcut icon"
+      href="./recursos/favico.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- GOOGLE FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="app" class="">
+    <!-- NAV-->
+    <!-- AQUI SE CAMBIAN LOS COLORES DEL NAVBAR Y EL PADDING -->
+    <nav class="navbar navbar-expand-lg px-4 py-1">
+      <div class="container-fluid p-0 m-0 d-flex justify-content-between">
+        <!-- ESTE ES EL TOOGLER Y BRAND-->
+        <div
+          class="d-flex justify-content-between align-items-center container-fluid"
+        >
+          <!-- EL COLOR DEL BORDE ESTÁ MODIFICADO EN EL STYLE (navbar-toggler)-->
+          <button
+            class="navbar-toggler df-col-cc"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <img src="./recursos/menu.svg" alt="menu" />
+          </button>
+          <!-- ESTE ES EL BRAND -->
+          <a class="navbar-brand m-0 p-0 border-0" href="#">
+            <!-- AQUI SE COLOCA EL LOGO MEDIANTE CSS-->
+            <div class="brand-logo"></div>
+          </a>
+        </div>
+
+        <!-- ESTE ES EL NAV CON LOS A -->
+        <div
+          class="collapse navbar-collapse container-fluid"
+          id="navbarTogglerDemo03"
+        >
+          <!-- ESTOS SON LOS ANCHOR -->
+          <ul
+            class="ul-movil d-flex list-no fs-2vh m-0 p-0 justify-content-end wid-50vw"
+          >
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link text-white" href="upcomingevents.html"
+                >Upcoming Events</a
+              >
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link text-white" href="#">Past Events</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link text-white" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link text-white" href="stats.html">Stats</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- A CONTINUACION EL HEADER Y EL DIV (main y footer) -->
+    <div
+      class="header-main caja df-row-cc align-items-start container-fluid m-0 p-0"
+    >
+      <header class="d-flex flex-column container-fluid p-0 m-0">
+        <div class="d-flex justify-content-center align-items-center">
+          <a class="me-3" href="upcomingevents.html"
+            ><img src="./recursos/mayor-menor.png" alt=""
+          /></a>
+          <h1 class="m-0 text-white fs-4vh">PAST EVENTS</h1>
+          <a class="ms-3" href="contact.html"
+            ><img src="./recursos/menor.png" alt=""
+          /></a>
+        </div>
+
+        <form
+          class="d-flex flex-column mt-5 align-items-center justify-content-center text-white flex-wrap"
+          role="search"
+        >
+          <p class="p-filtrar">Filtrar:</p>
+          <div
+            id="categorias"
+            class="div-categorias justify-content-start text-white flex-wrap"
+          >
+          <label class="mb-3 me-2" id="idlabel" v-for="categoria in categorias">
+            <input type="checkbox" :name="categoria" :value="categoria" v-model="categoriaSelected"/>
+            {{categoria}}
+          </label>
+          </div>
+        </form>
+      </header>
+      <div class="d-flex flex-column container-fluid m-0 p-0">
+        <main id="buscador-cards" class="container-fluid caja-3 wid100 p-0 m-0">
+          <!-- BUSCADOR Y FILTRO POR CATEGORÍAS -->
+          <form class="d-flex flex-column my-5 mx-5" role="search">
+            <div class="df-row-cc">
+              <input
+                class="form-control me-2 bg-gray-trans text-fucsia"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                required
+                  v-model="value"
+              />
+              {{search}}
+              <button
+                class="btn btn-outline-success btn-submit"
+                type="submit"
+                @click="submit"
+              ></button>
+            </div>
+          </form>
+          <div
+            class="cartas align-items-center d-flex flex-wrap justify-content-center"
+            id="cartas"
+          >
+          <div class="card bg-fucsia text-white border-0 rounded-0 me-4 mb-4" v-for="evento in eventosFiltrados">
+            <img class="rounded-0 card-img" :src="evento.image" :alt="evento.name"></img>
+            <div class="px-2 pt-1 d-flex flex-column justify-content-between wid-60">
+                  <h6 class="mt-4">{{evento.name}}</h6>
+                  <p class="text-desc">{{evento.description}}</p>
+                  <p class="text-desc">Price: {{evento.price}} </p>
+                  <a :href="'details.html?id='+evento._id" class="btn bg-gray p-0 text-fucsia px-1 rounded-0">ver más</a>
+            </div>
+          </div>
+          <div v-if="eventosFiltrados.length==''" class="text-white">Not found</div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <footer
+      class="container-fluid p-0 m-0 wid100 d-flex px-5 bg-gray align-items-center"
+    >
+      <div class="mt-1 mb-1">
+        <img
+          class="me-3 ico-foot"
+          src="./recursos/icons8-instagram-50.png"
+          alt=""
+        />
+        <img
+          class="me-3 ico-foot"
+          src="./recursos/icons8-facebook-50.png"
+          alt=""
+        />
+        <img class="ico-foot" src="./recursos/icons8-whatsapp-50.png" alt="" />
+      </div>
+      <p class="mb-2 text-fucsia">Amazing Events</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

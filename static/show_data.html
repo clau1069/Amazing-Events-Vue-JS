@@ -1,0 +1,165 @@
+<html>
+  <head>
+    <title>AmazingEvents | Feedback Sent</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./recursos/favico.ico"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- GOOGLE FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="d-flex flex-column text-white">
+    <nav class="navbar navbar-expand-lg px-4 py-1">
+      <div class="container-fluid p-0 m-0 d-flex justify-content-between">
+        <!-- ESTE ES EL TOOGLER Y BRAND-->
+        <div
+          class="d-flex justify-content-between align-items-center container-fluid"
+        >
+          <!-- EL COLOR DEL BORDE ESTÁ MODIFICADO EN EL STYLE (navbar-toggler)-->
+          <button
+            class="navbar-toggler df-col-cc"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <img src="./recursos/menu.svg" alt="menu" />
+          </button>
+          <!-- ESTE ES EL BRAND -->
+          <a class="navbar-brand m-0 p-0 border-0" href="#">
+            <!-- AQUI SE COLOCA EL LOGO MEDIANTE CSS-->
+            <div class="brand-logo"></div>
+          </a>
+        </div>
+
+        <!-- ESTE ES EL NAV CON LOS A -->
+        <div class="collapse navbar-collapse wid-auto" id="navbarTogglerDemo03">
+          <!-- ESTOS SON LOS ANCHOR -->
+          <ul
+            class="d-flex list-no fs-2vh m-0 p-0 justify-content-end wid-50vw"
+          >
+            <li class="nav-item">
+              <a
+                class="nav-link text-white"
+                aria-current="page"
+                href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link text-white" href="upcomingevents.html"
+                >Upcoming Events</a
+              >
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link text-white" href="pastevents.html"
+                >Past Events</a
+              >
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link text-white" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link text-white" href="stats.html">Stats</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="d-flex justify-content-center align-items-center flex-column mt-5"
+    >
+      <p align="center">&nbsp;</p>
+      <h1 align="center">
+        <font size="+1"
+          >The following information has been sent as your feedback:</font
+        >
+      </h1>
+
+      <table class="text-center border" border="1" align="center" width="500">
+        <tr>
+          <th class="bg-dark text-fucsia" align="center">Form Field</th>
+          <th class="bg-dark text-fucsia" align="center">Field Value</th>
+        </tr>
+
+        <script language="javascript">
+          var args = location.search.substr(1).split("&");
+          for (var i = 0; i < args.length; ++i) {
+            var parts = args[i].split("=");
+            if (parts != null) {
+              var field = parts[0];
+              var value = parts[1];
+              if (value == null) {
+                value = "null";
+              } else {
+                value = '"' + unescape(value.replace(/\+/g, " ")) + '"';
+              }
+
+              document.writeln('<tr><td align="center">' + field + "</td>");
+              document.writeln('<td align="center">' + value + "</td></tr>");
+            }
+          }
+        </script>
+
+        <noscript>
+          <tr>
+            <td>
+              <p>You need to turn on Javascript in your browser.</p>
+
+              <p>In Microsoft Internet Explorer 4 or greater:</p>
+              <ul>
+                <li>
+                  From the "Tools" menu (in IE 4, it's the "View" menu), select
+                  "Internet Options".
+                </li>
+                <li>Click on the "Security" tab.</li>
+                <li>
+                  Click on the "Custom Level" button. (In IE 4, select "Custom"
+                  and then click on "Settings...".)
+                </li>
+                <li>
+                  Under "Active scripting" make sure "Enable" is selected.
+                </li>
+              </ul>
+
+              <p>In Netscape version 4 or greater:</p>
+              <ul>
+                <li>From the <b>Edit</b> menu, select <b>Preferences</b>.</li>
+                <li>
+                  In the <b>Category</b> list on the left, click on the word
+                  "Advanced".
+                </li>
+                <li>
+                  In the panel on the right, make sure "Enable JavaScript" is
+                  checked.
+                </li>
+                <li>Click the <b>OK</b> button.</li>
+              </ul>
+            </td>
+          </tr>
+        </noscript>
+      </table>
+      <a
+        class="bg-dark text-fucsia mt-5 border p-2 deco-no"
+        href="index.html"
+        class="mt-4 btn bg-gray p-0 text-fucsia px-1 rounded-0"
+        >Go to Home</a
+      >
+    </div>
+  </body>
+</html>
